@@ -51,7 +51,7 @@ export function useTripBrief() {
     setBriefing(null)
 
     try {
-      const apiUrl = `/api/gemini?key=${import.meta.env.VITE_GEMINI_API_KEY}`
+      const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${import.meta.env.VITE_GEMINI_API_KEY}`
       const res = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

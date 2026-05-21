@@ -6,13 +6,4 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
-  server: {
-    proxy: {
-      '/api/gemini': {
-        target: 'https://generativelanguage.googleapis.com',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/gemini/, '/v1beta/models/gemini-flash-latest:generateContent'),
-      },
-    },
-  },
 })
